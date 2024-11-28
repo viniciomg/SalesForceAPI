@@ -11,6 +11,11 @@ public abstract class EFCoreRepositoryBase<TdbContext, TEntity> : RepositoryBase
         _dbContextProvider = dbContextProvider;
 
     }
+    public override IQueryable<TEntity> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+
     public virtual async Task<DbSet<TEntity>> GetTableAsync()
     {
         var context = _dbContextProvider;

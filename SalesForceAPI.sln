@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Test", "SalesFor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Infra.Migration", "SalesForce.Infra.Migration\SalesForce.Infra.Migration.csproj", "{787A083A-5081-4948-9F32-044DD574B6E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Domain.Dto", "SalesForce.Domain.Dto\SalesForce.Domain.Dto.csproj", "{0594C898-A569-4DED-89C0-557E97E5698F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{787A083A-5081-4948-9F32-044DD574B6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{787A083A-5081-4948-9F32-044DD574B6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{787A083A-5081-4948-9F32-044DD574B6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0594C898-A569-4DED-89C0-557E97E5698F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0594C898-A569-4DED-89C0-557E97E5698F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0594C898-A569-4DED-89C0-557E97E5698F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0594C898-A569-4DED-89C0-557E97E5698F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{BC0966B4-83B2-4C86-AF46-DEB03836CBA9} = {C8A33011-2EE7-460A-937C-64EEC2BE7080}
 		{CF6E3D7A-314C-4642-AF71-0530C9D01922} = {681344D8-3D35-4674-A487-DEEB375771C4}
 		{787A083A-5081-4948-9F32-044DD574B6E6} = {C8A33011-2EE7-460A-937C-64EEC2BE7080}
+		{0594C898-A569-4DED-89C0-557E97E5698F} = {8B9F057D-5CE4-4C6E-B9E9-FA5B13678BF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E97D7EC-7364-4984-95B0-B7C9AECF5F36}
