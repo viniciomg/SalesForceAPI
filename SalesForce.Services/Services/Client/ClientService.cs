@@ -1,17 +1,23 @@
-﻿using SalesForce.Domain.Dto;
+﻿using MediatR;
+using SalesForce.Domain.Dto;
 using SalesForce.Domain.Entities;
 using SalesForce.Domain.Interfaces.Repository;
 using SalesForce.Domain.Interfaces.Services;
+using SalesForce.Services.Base;
+using SalesForce.Services.Notification.Implementation;
+using SalesForce.Services.Notification.Interface;
+using SalesForce.Services.Notification.Model;
 
 namespace SalesForce.Services.Services;
 
-public class ClientService : IClientService
+public class ClientService : BaseService<Client>, IClientService
 {
     private readonly IClientRepository _clientRepository;
-
-    public ClientService(IClientRepository clientRepository)
+    
+    public ClientService(INotify notify, INotificationHandler<Notifications> notification, IClientRepository clientRepository) : base(notify, notification)
     {
         _clientRepository = clientRepository;
+        _notify = notify.Invoke();
     }
 
     public async Task<IList<ClientResDto>> GetAllClients()
@@ -23,8 +29,12 @@ public class ClientService : IClientService
             new Client { Id = 3, NameSocial = "Empresa C", CompanyId = 2 }
         }.AsQueryable();
 
-        var ret = mockData;
+        if (mockData.Count() < 4)
+        {
+            _notify.NewNotification("Invalido", "quantidade invalidas");
+            return default;
+        }
+        return mockData.Select(x => new ClientResDto { Id = x.Id, NameSocial = x.NameSocial }).ToList();
         //var ret =await _clientRepository.GetAllAsync(x => x.CompanyId == 1);
-        return ret.Select(x => new ClientResDto { Id = x.Id, NameSocial = x.NameSocial }).ToList();
     }
 }

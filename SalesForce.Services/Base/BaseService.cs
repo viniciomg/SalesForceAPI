@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using SalesForce.Services.Notification.Handler;
 using SalesForce.Services.Notification.Implementation;
+using SalesForce.Services.Notification.Interface;
 using SalesForce.Services.Notification.Model;
 
 namespace SalesForce.Services.Base;
@@ -9,7 +10,7 @@ public class BaseService<TEntity>
     public Notify _notify;
     private readonly NotifyHandler _messageHandler;
 
-    public BaseService(Notify notify, INotificationHandler<Notifications> notification)
+    public BaseService(INotify notify, INotificationHandler<Notifications> notification)
     {
         _notify = notify.Invoke();
         _messageHandler = (NotifyHandler)notification; ;
